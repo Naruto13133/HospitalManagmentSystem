@@ -183,7 +183,7 @@ public class Login extends javax.swing.JFrame {
     private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_adminActionPerformed
-
+//this will Redirect to HomePage frame
     private void LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMouseClicked
         // TODO add your handling code here:
         String s=valueOf(admin.getText());
@@ -209,7 +209,7 @@ public class Login extends javax.swing.JFrame {
             System.out.print("else block");
         }
     }//GEN-LAST:event_LoginMouseClicked
-
+//This will Create text Filed 
     private void clearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseClicked
         // TODO add your handling code here:
         admin.setText("");

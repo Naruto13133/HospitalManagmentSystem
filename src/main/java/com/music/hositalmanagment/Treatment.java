@@ -357,7 +357,7 @@ public class Treatment extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//this will clear text Filed
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         // TODO add your handling code here:
         
@@ -377,7 +377,7 @@ public class Treatment extends javax.swing.JFrame {
     private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_HomeActionPerformed
-
+//this Will Add table in DoctorDetail table
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
         // TODO add your handling code here:
         try{Class.forName("com.mysql.jdbc.Driver");
@@ -428,7 +428,7 @@ public class Treatment extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_AddMouseClicked
-
+//This will show data from doc_dtl table
     private void Sh_dataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Sh_dataMouseClicked
         // TODO add your handling code here:
         
@@ -472,7 +472,7 @@ public class Treatment extends javax.swing.JFrame {
          }
         
     }//GEN-LAST:event_Sh_dataMouseClicked
-
+//This will Delete value from Doc_Dtl table
     private void DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteMouseClicked
         // TODO add your handling code here:
         int i=Integer.parseInt(JOptionPane.showInputDialog(""));
@@ -490,7 +490,7 @@ public class Treatment extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_DeleteMouseClicked
-
+//this will redirect to HomePage
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
         // TODO add your handling code here:
         

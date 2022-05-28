@@ -535,7 +535,7 @@ public class Patient extends javax.swing.JFrame {
     private void P_dignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_P_dignoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_P_dignoActionPerformed
-
+//this Will Add value in table DoctorDetail table
     private void AddbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddbtnMouseClicked
         // TODO add your handling code here:
          try
@@ -565,7 +565,7 @@ public class Patient extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_AddbtnMouseClicked
-
+//this Will Delete value of DoctorDetail table
     private void P_deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_P_deleteMouseClicked
         // TODO add your handling code here:
         
@@ -586,7 +586,7 @@ public class Patient extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_P_deleteMouseClicked
-
+//this Will clear TextFiled
     private void clearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseClicked
         // TODO add your handling code here: D_name.setText("");
         P_phone.setText("");
@@ -599,7 +599,7 @@ public class Patient extends javax.swing.JFrame {
         P_digno.setText("");
         P_name.setText("");
     }//GEN-LAST:event_clearMouseClicked
-
+//this Will Add show Data of DoctorDetail table
     private void ShowDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowDataMouseClicked
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) Ptable.getModel();
@@ -656,7 +656,7 @@ model.setRowCount(0);
     private void AddbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddbtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AddbtnActionPerformed
-
+//this Will Redirect to homePage
     private void PhomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhomeMouseClicked
         // TODO add your handling code here:
         HomePage hf=new HomePage();

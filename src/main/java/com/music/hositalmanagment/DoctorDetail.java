@@ -531,6 +531,7 @@ public class DoctorDetail extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_D_deleteActionPerformed
 
+//    This will clear TextFiled
     private void D_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D_clearActionPerformed
         // TODO add your handling code here:
         D_id.setText("");
@@ -548,7 +549,7 @@ public class DoctorDetail extends javax.swing.JFrame {
     private void D_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D_homeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_D_homeActionPerformed
-
+//this will Insert Value into table
     private void D_addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D_addMouseClicked
 
         // TO1DO add your handling code here:
@@ -577,7 +578,7 @@ public class DoctorDetail extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_D_addMouseClicked
-
+//this will Delete Row in table
     private void D_deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D_deleteMouseClicked
         // TODO add your handling code here:
         try{
@@ -603,6 +604,7 @@ public class DoctorDetail extends javax.swing.JFrame {
     }//GEN-LAST:event_DtableMouseClicked
 
     @SuppressWarnings("empty-statement")
+//    This will show table
     private void showMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showMouseClicked
 //        DefaultTableModel model = new DefaultTableModel();
 DefaultTableModel model = (DefaultTableModel) Dtable.getModel();
@@ -674,7 +676,7 @@ model.setRowCount(0);
         
                 
     }//GEN-LAST:event_showMouseClicked
-
+//This will clear Text Filed
     private void D_clearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D_clearMouseClicked
         // TODO add your handling code here:
         D_name.setText("");
@@ -690,7 +692,7 @@ model.setRowCount(0);
         
         
     }//GEN-LAST:event_D_clearMouseClicked
-
+//This will Redirect to HOme page
     private void D_homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D_homeMouseClicked
         // TODO add your handling code here:
         HomePage hf=new HomePage();

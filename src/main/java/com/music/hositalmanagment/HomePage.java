@@ -170,14 +170,14 @@ public class HomePage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//This show DoctorDetail Frame
     private void DoctorDtlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DoctorDtlMouseClicked
         // TODO add your handling code here:
         DoctorDetail lg=new DoctorDetail();
             lg.setVisible(true);
             this.setVisible(false);
     }//GEN-LAST:event_DoctorDtlMouseClicked
-
+//this Will Redirect PatientDetail Frame
     private void ptnt_dtlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ptnt_dtlMouseClicked
         // TODO add your handling code here:
         Patient pt=new Patient();
@@ -185,14 +185,14 @@ public class HomePage extends javax.swing.JFrame {
         this.setVisible(false);
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
     }//GEN-LAST:event_ptnt_dtlMouseClicked
-
+//this Will Redirect to LogIn Frame
     private void LogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseClicked
         // TODO add your handling code here:
         Login li=new Login();
         li.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_LogOutMouseClicked
-
+//this Will Redirect to Treatment Frame
     private void TreatmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TreatmentMouseClicked
         // TODO add your handling code here:
         Treatment tt=new Treatment();
