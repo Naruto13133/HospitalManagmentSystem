@@ -4,6 +4,7 @@
  */
 package com.music.hositalmanagment;
 
+import static java.lang.String.valueOf;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -68,6 +69,9 @@ public class Treatment extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         prist = new javax.swing.JTable();
         Home = new javax.swing.JButton();
+        update = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        prisc = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -236,13 +240,13 @@ public class Treatment extends javax.swing.JFrame {
 
         prist.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "P_ID", "D_ID", "PATHGN", "SYMPTM", "DIGNSD", "TRTMNT", "PrisId"
+                "P_ID", "D_ID", "NAME", "SYMPTM", "DIGNSD", "TRTMNT", "PrisId", "PRISCRIPTION", "PATHoGENE"
             }
         ));
         jScrollPane2.setViewportView(prist);
@@ -262,6 +266,26 @@ public class Treatment extends javax.swing.JFrame {
             }
         });
 
+        update.setBackground(new java.awt.Color(0, 51, 51));
+        update.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        update.setForeground(new java.awt.Color(255, 255, 255));
+        update.setText("UPDATE");
+        update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateMouseClicked(evt);
+            }
+        });
+        update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel10.setText("PRISCRIPTION");
+
+        prisc.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -276,8 +300,10 @@ public class Treatment extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(345, 345, 345))
+                .addGap(339, 339, 339))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -290,10 +316,12 @@ public class Treatment extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jLabel4)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(6, 6, 6)
-                            .addComponent(jLabel5))
-                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel5)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,7 +329,8 @@ public class Treatment extends javax.swing.JFrame {
                     .addComponent(did, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ptgn, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(dign)
-                    .addComponent(trtmt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(trtmt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prisc, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(82, Short.MAX_VALUE)
@@ -341,11 +370,16 @@ public class Treatment extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(prisc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Sh_data, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -441,25 +475,27 @@ public class Treatment extends javax.swing.JFrame {
          try{Class.forName("com.mysql.jdbc.Driver");
         con=DriverManager.getConnection("jdbc:mysql://localhost:3306/atul", "root", "aaaa");
              
-        //truncating table for updating values
-        Statement trnc=con.createStatement();
-           trnc.executeUpdate("truncate table ttmnt;");
-           
-           //using inner join for inserting values into treatment(ttmnt table
-             Statement in=con.createStatement();
-             in.executeUpdate("INSERT INTO  ttmnt " +
-"(p_id,d_id,name,pthgn,dign,bg,gender) " +
-"select ptnt_dtl.p_id,doc_dtl.d_id,ptnt_dtl.p_name,ptnt_dtl.p_pathgn,ptnt_dtl.p_digns,ptnt_dtl.p_bg,ptnt_dtl.p_gender " +
-"from doc_dtl, ptnt_dtl " +
-"where doc_dtl.d_id=ptnt_dtl.d_id;");
+//        //truncating table for updating values
+//        Statement trnc=con.createStatement();
+//           trnc.executeUpdate("truncate table ttmnt;");
+//           
+//           //using inner join for inserting values into treatment(ttmnt table
+//             Statement in=con.createStatement();
+//             in.executeUpdate("INSERT INTO  ttmnt " +
+//"(p_id,d_id,name,pthgn,dign,bg,gender) " +
+//"select ptnt_dtl.p_id,doc_dtl.d_id,ptnt_dtl.p_name,ptnt_dtl.p_pathgn,ptnt_dtl.p_digns,ptnt_dtl.p_bg,ptnt_dtl.p_gender,ptnt_dtl.p_presc " +
+//"from doc_dtl, ptnt_dtl " +
+//"where doc_dtl.d_id=ptnt_dtl.d_id;");
              
              
              
            
             
            
-            //selectting values form treatment table...
-             PreparedStatement show=con.prepareStatement("select * from ttmnt ;");
+            //selectting values using join of table...
+             PreparedStatement show=con.prepareStatement("select ptnt_dtl.p_id,doc_dtl.d_id,ptnt_dtl.p_name,ptnt_dtl.p_pathgn,ptnt_dtl.p_digns,ptnt_dtl.p_bg,ptnt_dtl.p_gender,ptnt_dtl.p_presc " +
+"from doc_dtl, ptnt_dtl " +
+"where doc_dtl.d_id=ptnt_dtl.d_id;");
                 ResultSet rs=show.executeQuery();
         
         int pris;
@@ -468,20 +504,23 @@ public class Treatment extends javax.swing.JFrame {
         String name;
         String pathgn;
         String digns;
-        String ttment;
-        String sympt;
+        String bg;
+        String gender;
+        String presc;
         
         while (rs.next())
         {
             pris=rs.getInt(1);
            p_id=rs.getInt(2);
            D_id=rs.getInt(3);
-           pathgn=rs.getString(4);
-           digns=rs.getString(5);
-           ttment=rs.getString(6);
-           sympt=rs.getString(7);
+           name=rs.getString(4);
+           pathgn=rs.getString(5);
+           digns=rs.getString(6);
+           bg=rs.getString(7);
+           gender=rs.getString(8);
+           presc=rs.getString(9);
            
-           model.addRow(new Object[]{p_id,D_id,pathgn,digns,ttment,sympt,pris});
+           model.addRow(new Object[]{pris,p_id,D_id,name,digns,bg,gender,presc,pathgn});
             
         }
            
@@ -501,8 +540,8 @@ public class Treatment extends javax.swing.JFrame {
         int i=Integer.parseInt(JOptionPane.showInputDialog(""));
         try{Class.forName("com.mysql.jdbc.Driver");
         con=DriverManager.getConnection("jdbc:mysql://localhost:3306/atul", "root", "aaaa");
-             PreparedStatement show=con.prepareStatement("delete from treatment where pris_id =?;");
-             show.setInt(1, i);
+             PreparedStatement show=con.prepareStatement("update ptnt_dtl set p_presc= null where  p_id=?;");
+             show.setInt(1, Integer.parseInt(valueOf(pid.getText())));
              show.execute();
              con.close();
                 
@@ -522,6 +561,30 @@ public class Treatment extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_HomeMouseClicked
+
+    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
+        // TODO add your handling code here:
+        
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver;");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/atul", "root", "aaaa");
+           PreparedStatement ps= con.prepareStatement("update ptnt_dtl set p_presc= ? where p_id=? ;");
+           ps.setInt(2, Integer.parseInt(valueOf(pid.getText())));
+           ps.setString(1, valueOf(prisc.getText()));
+            
+        }
+        catch(Exception  w)
+        {
+            w.printStackTrace();
+        }
+        
+        
+    }//GEN-LAST:event_updateMouseClicked
+
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -568,6 +631,7 @@ public class Treatment extends javax.swing.JFrame {
     private javax.swing.JTextField did;
     private javax.swing.JTextField dign;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -583,9 +647,11 @@ public class Treatment extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField pid;
+    private javax.swing.JTextField prisc;
     private javax.swing.JTable prist;
     private javax.swing.JTextField ptgn;
     private javax.swing.JTextArea sysmp;
     private javax.swing.JTextField trtmt;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }
