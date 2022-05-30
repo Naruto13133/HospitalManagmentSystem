@@ -32,8 +32,9 @@ public class HomePage extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         LogOut = new javax.swing.JLabel();
         ptnt_dtl = new javax.swing.JLabel();
-        DoctorDtl = new javax.swing.JLabel();
+        DoctorDetail = new javax.swing.JLabel();
         Treatment = new javax.swing.JLabel();
+        DoctorLogIn = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,11 +89,11 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        DoctorDtl.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        DoctorDtl.setText("DOCTOR DETAILS");
-        DoctorDtl.addMouseListener(new java.awt.event.MouseAdapter() {
+        DoctorDetail.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        DoctorDetail.setText("DOCTOR DETAIL");
+        DoctorDetail.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                DoctorDtlMouseClicked(evt);
+                DoctorDetailMouseClicked(evt);
             }
         });
 
@@ -104,31 +105,42 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        DoctorLogIn.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        DoctorLogIn.setText("DOCTOR LOGIN");
+        DoctorLogIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DoctorLogInMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addGap(423, 423, 423)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(DoctorDtl)
-                    .addComponent(ptnt_dtl)
+                    .addComponent(LogOut)
+                    .addComponent(DoctorDetail)
                     .addComponent(Treatment)
-                    .addComponent(LogOut))
-                .addContainerGap(160, Short.MAX_VALUE))
+                    .addComponent(DoctorLogIn)
+                    .addComponent(ptnt_dtl))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(DoctorDtl)
+                .addGap(69, 69, 69)
+                .addComponent(DoctorDetail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DoctorLogIn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Treatment)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ptnt_dtl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LogOut)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -171,12 +183,12 @@ public class HomePage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DoctorDtlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DoctorDtlMouseClicked
+    private void DoctorDetailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DoctorDetailMouseClicked
         // TODO add your handling code here:
         DoctorDetail lg=new DoctorDetail();
             lg.setVisible(true);
             this.setVisible(false);
-    }//GEN-LAST:event_DoctorDtlMouseClicked
+    }//GEN-LAST:event_DoctorDetailMouseClicked
 
     private void ptnt_dtlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ptnt_dtlMouseClicked
         // TODO add your handling code here:
@@ -199,6 +211,13 @@ public class HomePage extends javax.swing.JFrame {
         tt.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_TreatmentMouseClicked
+
+    private void DoctorLogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DoctorLogInMouseClicked
+        // TODO add your handling code here:
+        DoctorPatientLogin dl= new DoctorPatientLogin();
+        dl.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_DoctorLogInMouseClicked
 
     /**
      * @param args the command line arguments
@@ -237,7 +256,8 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel DoctorDtl;
+    private javax.swing.JLabel DoctorDetail;
+    private javax.swing.JLabel DoctorLogIn;
     private javax.swing.JLabel LogOut;
     private javax.swing.JLabel Treatment;
     private javax.swing.JLabel jLabel1;
